@@ -5,6 +5,8 @@ using TMPro;
 
 public class ACSettings : FunctionsAndVariables
 {
+    public TMP_Text result;
+
     public void OnClick()
     {
        SecondValue = 0.0;

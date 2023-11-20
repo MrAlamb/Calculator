@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -12,6 +10,14 @@ public class NumbersSettings : MonoBehaviour
     public void OnClick()
     {
         result.text += TEXT.text;
+    }
+
+    public void Update()
+    {
+        if (Input.inputString == TEXT.text)
+        {
+            result.text += TEXT.text;
+        }
     }
 
 }

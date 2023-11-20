@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class EqualsSettings : FunctionsAndVariables
 {
-   // private FunctionsAndVariables a;
+    public TMP_Text result;
 
     public void OnClick()
     {
@@ -14,6 +13,14 @@ public class EqualsSettings : FunctionsAndVariables
         operation = EnumOperation.Equals;
         Do();
         result.text = SecondValue.ToString();
-    } 
+    }
+
+    public void Update()
+    {
+        if (Input.inputString == "=" || Input.GetKey(KeyCode.Return))
+        {
+            gameObject.GetComponent<Button>().onClick.Invoke();
+        }
+    }
 }
  

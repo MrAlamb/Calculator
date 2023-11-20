@@ -5,6 +5,8 @@ using TMPro;
 
 public class PlusMinusSettings : FunctionsAndVariables
 {
+    public TMP_Text result;
+
     public void OnClick()
     {
         string v = (0 - double.Parse(result.text)).ToString();
