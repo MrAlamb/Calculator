@@ -3,18 +3,29 @@ using TMPro;
 
 public class NumbersSettings : MonoBehaviour
 {
-    public TMP_Text TEXT;
+    public TMP_Text Text;
 
     public void OnClick()
     {
-        Variables.SharedInstance.result.text += TEXT.text;
+        
+        if (Variables.SharedInstance.result.text == "NaN" || Variables.SharedInstance.result.text == "" || Variables.SharedInstance.result.text == "0")
+            Variables.SharedInstance.result.text = Text.text;
+        else
+            Variables.SharedInstance.result.text += Text.text;
+
     }
 
-    public void Update()
+    public void OnGUI()
     {
-        if (Input.inputString == TEXT.text)
+        Event e = Event.current;
+        if (e.type == EventType.KeyDown)
         {
-            Variables.SharedInstance.result.text += TEXT.text;
+            char c = e.character;
+            if (c.ToString() == Text.text)
+            {
+                OnClick(); 
+                e.Use();
+            }
         }
     }
 

@@ -11,11 +11,16 @@ public class PlusSettings : MonoBehaviour
         else Functions.Do(Variables.EnumOperation.Plus, 0.0);
         Variables.SharedInstance.result.text = "";
     }
-    public void Update()
+    public void OnGUI()
     {
-        if (Input.inputString == "+")
+        Event e = Event.current;
+        if (e.type == EventType.KeyDown)
         {
-            gameObject.GetComponent<Button>().onClick.Invoke();
+            char c = e.character;
+            if (c.ToString() == "+")
+            {
+                OnClick();
+            }
         }
     }
 }

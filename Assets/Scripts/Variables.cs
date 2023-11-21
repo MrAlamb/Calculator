@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class Variables : MonoBehaviour
 {
-   private static Variables instance = null; public static Variables SharedInstance
+   private static Variables instance = null;
+   public static Variables SharedInstance
     {
         get
         {
@@ -26,9 +27,11 @@ public class Variables : MonoBehaviour
 
     public double SecondValue = 0.0;
     public bool SecondValueBool = true;
-    public bool k = false;
+    public bool DivMultiplyOperation = false;
     public double ThirdValue = 1;
+    public double LastValue;
     public  Stack<EnumOperation> stackOperation = new Stack<EnumOperation>();
+    public EnumOperation LastOperation;
 
     public double shablon(EnumOperation save, double value1, double value2)
     {

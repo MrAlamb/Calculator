@@ -12,4 +12,17 @@ public class CESettings : MonoBehaviour
         for (int i = 0; i < s.Length - 1; i++)
             Variables.SharedInstance.result.text += s[i];
     }
+
+    public void OnGUI()
+    {
+        Event e = Event.current;
+        if (e.type == EventType.KeyDown)
+        {
+          //  char c = e.character;
+            if (e.keyCode == KeyCode.Backspace)
+            {
+                OnClick();
+            }
+        }
+    }
 }

@@ -12,11 +12,17 @@ public class MinusSetting : MonoBehaviour
         else Functions.Do(Variables.EnumOperation.Minus, 0.0);
         Variables.SharedInstance.result.text = "";
     }
-    public void Update()
+    public void OnGUI()
     {
-        if (Input.inputString == "-")
+        Event e = Event.current;
+        if (e.type == EventType.KeyDown)
         {
-            gameObject.GetComponent<Button>().onClick.Invoke();
+            // Проверяем, какая клавиша была нажата
+            if (e.keyCode == KeyCode.Minus || e.keyCode == KeyCode.KeypadMinus)
+            {
+                // Вызываем метод OnClick
+                OnClick();
+            }
         }
     }
 }
