@@ -5,14 +5,11 @@ using TMPro;
 
 public class CESettings : MonoBehaviour
 {
-    public TMP_Text result;
-    // public string s = result;
     public void OnClick()
     {
-        string s = result.text;
-        result.text = "";
+        string s = Variables.SharedInstance.result.text;
+        Variables.SharedInstance.result.text = "";
         for (int i = 0; i < s.Length - 1; i++)
-            result.text += s[i];
-       // TMP_Text save = ;
+            Variables.SharedInstance.result.text += s[i];
     }
 }

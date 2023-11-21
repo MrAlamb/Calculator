@@ -3,13 +3,12 @@ using TMPro;
 
 public class PointSetting : MonoBehaviour
 {
-    public TMP_Text result;
     public void OnClick()
     {
 
-        if (int.TryParse(result.text, out _))
+        if (int.TryParse(Variables.SharedInstance.result.text, out _))
         {
-            result.text += '.';
+            Variables.SharedInstance.result.text += '.';
         }
         }
 
