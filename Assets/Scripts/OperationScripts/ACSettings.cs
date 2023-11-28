@@ -14,6 +14,6 @@ public class ACSettings : MonoBehaviour
         Variables.SharedInstance.ThirdValue = 1;
         Variables.SharedInstance.LastValue = 0;
         Variables.SharedInstance.stackOperation.Clear();
-        Variables.SharedInstance.result.text = "";
+        Variables.SharedInstance.result.text = "0";
     }
 }

@@ -37,8 +37,6 @@ public class Functions : MonoBehaviour
 
     public static void Do(Variables.EnumOperation operation, double FourthValue)
     {
-        //if (FourthValue == double.NaN && (operation == Variables.EnumOperation.Div || operation == Variables.EnumOperation.Multiply)) FourthValue = 1;
-        //else FourthValue = 0;
         Variables.SharedInstance.LastValue = FourthValue;
 
         if (Variables.SharedInstance.SecondValueBool)

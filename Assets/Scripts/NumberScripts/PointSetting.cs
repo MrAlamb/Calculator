@@ -3,13 +3,12 @@ using TMPro;
 
 public class PointSetting : MonoBehaviour
 {
-    public TMP_Text Text;
 
     public void OnClick()
     {
         if (int.TryParse(Variables.SharedInstance.result.text, out _))
         {
-            Variables.SharedInstance.result.text += Text.text;
+            Variables.SharedInstance.result.text += ".";
         }
         else
         {
@@ -23,18 +22,19 @@ public class PointSetting : MonoBehaviour
         }
     }
 
-    //public void OnGUI()
-    //{
-    //    Event e = Event.current;
-    //    if (e.type == EventType.KeyDown)
-    //    {
-    //        if (e.character == '.')
+    public void OnGUI()
+    {
+        Event e = Event.current;
+        if (e.type == EventType.KeyDown)
+        {
+            if (e.keyCode == KeyCode.Period)
+            {
+                this.OnClick();
+                return;
 
-    //        {
-    //            OnClick();
-    //        }
-    //    }
-    //}
-
-
+            }
+        }
     }
+
+
+}

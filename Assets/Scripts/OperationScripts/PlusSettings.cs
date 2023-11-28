@@ -9,7 +9,7 @@ public class PlusSettings : MonoBehaviour
         if (double.TryParse(Variables.SharedInstance.result.text, out _))
             Functions.Do(Variables.EnumOperation.Plus, double.Parse(Variables.SharedInstance.result.text));
         else Functions.Do(Variables.EnumOperation.Plus, 0.0);
-        Variables.SharedInstance.result.text = "";
+        Variables.SharedInstance.result.text = "0";
     }
     public void OnGUI()
     {

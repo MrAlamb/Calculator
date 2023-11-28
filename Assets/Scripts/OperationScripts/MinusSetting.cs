@@ -10,17 +10,16 @@ public class MinusSetting : MonoBehaviour
         if (double.TryParse(Variables.SharedInstance.result.text, out _))
             Functions.Do(Variables.EnumOperation.Minus, double.Parse(Variables.SharedInstance.result.text));
         else Functions.Do(Variables.EnumOperation.Minus, 0.0);
-        Variables.SharedInstance.result.text = "";
+        Variables.SharedInstance.result.text = "0";
     }
+
     public void OnGUI()
     {
         Event e = Event.current;
         if (e.type == EventType.KeyDown)
         {
-            // Проверяем, какая клавиша была нажата
             if (e.keyCode == KeyCode.Minus || e.keyCode == KeyCode.KeypadMinus)
             {
-                // Вызываем метод OnClick
                 OnClick();
             }
         }

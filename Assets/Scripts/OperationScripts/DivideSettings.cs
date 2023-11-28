@@ -9,7 +9,7 @@ public class DivideSettings : MonoBehaviour
         if (double.TryParse(Variables.SharedInstance.result.text, out _))
             Functions.Do(Variables.EnumOperation.Div, double.Parse(Variables.SharedInstance.result.text));
         else Functions.Do(Variables.EnumOperation.Div, 1.0);
-        Variables.SharedInstance.result.text = "";
+        Variables.SharedInstance.result.text = "0";
     }
     public void OnGUI()
     {
